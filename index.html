@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather app</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/b7280c259f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="app">
+        <img src="images/beachtop.jpg" alt="beachview top" />
+
+        <form class="input-group mb-3 shadow-sm rounded" id="city-search-form">
+          <input
+            type="search"
+            class="form-control"
+            placeholder="Search for a city"
+            aria-label="Search for a city"
+            aria-describedby="button-addon2"
+            id="city-search-input"
+          />
+          <input
+            type="submit"
+            class="btn btn-outline-secondary"
+            type="button"
+            id="button-addon2"
+            value="Search"
+          />
+        </form>
+        <button class="shadow-sm rounded" id="location">
+          Current location
+        </button>
+
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-6 shadow-sm rounded">
+              <h1></h1>
+              <h2>Wednesday 16:00</h2>
+              <h3>
+                <span id="temp"></span>
+                <a href id="celsius"></a> <a href id="fahrenheit"></a>
+              </h3>
+              <h4></h4>
+            </div>
+            <div class="col-6 shadow-sm rounded">
+              <div class="row">
+                <div class="col-sm-6">Monday</div>
+                <div class="col-sm-4">25°C</div>
+                <div class="col-sm-2"><i class="fa-solid fa-sun"></i></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">Tuesday</div>
+                <div class="col-sm-4">24°C</div>
+                <div class="col-sm-2">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">Wednesday</div>
+                <div class="col-sm-4">26°C</div>
+                <div class="col-sm-2"><i class="fa-solid fa-sun"></i></div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">Thursday</div>
+                <div class="col-sm-4">25°C</div>
+                <div class="col-sm-2">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">Friday</div>
+                <div class="col-sm-4">26°C</div>
+                <div class="col-sm-2">
+                  <i class="fa-solid fa-cloud-sun"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p>coded by Saana Ahonen</p>
+        <img src="images/beachbottom.jpg" alt="beachview bottom" />
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
