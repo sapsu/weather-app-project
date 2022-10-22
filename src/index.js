@@ -81,8 +81,14 @@ function showWeather(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
+  let icon = document.querySelector("#icon");
+  //let icon = response.data.weather[0].icon;
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${place}`;
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   let h3 = document.querySelector("h3");
   h3.innerHTML = `${temperature}°C (feels like ${feels}°C), ${description}`;
   let h4 = document.querySelector("h4");
