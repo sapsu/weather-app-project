@@ -86,5 +86,5 @@ function showWeather(response) {
   let h3 = document.querySelector("h3");
   h3.innerHTML = `${temperature}°C (feels like ${feels}°C), ${description}`;
   let h4 = document.querySelector("h4");
-  h4.innerHTML = `humidity: ${humidity}% wind speed: ${wind} m/s`;
+  h4.innerHTML = `Humidity: ${humidity}% Wind speed: ${wind} m/s`;
 }
