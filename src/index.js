@@ -76,10 +76,12 @@ let locationWeather = document.querySelector("#location");
 locationWeather.addEventListener("click", currentWeather);
 
 function showWeather(response) {
-  console.log(response);
-  console.log(response.data.main.temp);
+  //console.log(response);
+  //console.log(response.data.main.temp);
   celsiusTemperature = Math.round(response.data.main.temp);
   let feels = Math.round(response.data.main.feels_like);
+  let feelsFahrenheit = Math.round((feels * 9) / 5 + 32);
+  console.log(feelsFahrenheit);
   let place = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
@@ -94,7 +96,7 @@ function showWeather(response) {
   let degrees = document.querySelector("#degrees");
   degrees.innerHTML = `${celsiusTemperature}`;
   let h4 = document.querySelector("h4");
-  h4.innerHTML = `Feels like ${feels}°C, ${description}`;
+  h4.innerHTML = `Feels like ${feels}°C (${feelsFahrenheit}°F), ${description}`;
   let h5 = document.querySelector("h5");
   h5.innerHTML = `Humidity: ${humidity}% Wind speed: ${wind} m/s`;
 }
