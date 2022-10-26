@@ -52,8 +52,8 @@ let celsiusTemperature = null;
 
 function convertTemperatureBack(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = "26";
+  let temperatureElement = document.querySelector("#degrees");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
 let temperatureCelsius = document.querySelector("#celsius");
