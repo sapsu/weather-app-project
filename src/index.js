@@ -40,12 +40,15 @@ citySearch.addEventListener("submit", showCity);
 
 function convertTemperature(event) {
   event.preventDefault();
-  let temperature = document.querySelector("#temp");
-  temperature.innerHTML = "79";
+  let temperatureElement = document.querySelector("#degrees");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
 
 let temperatureFahrenheit = document.querySelector("#fahrenheit");
 temperatureFahrenheit.addEventListener("click", convertTemperature);
+
+let celsiusTemperature = null;
 
 function convertTemperatureBack(event) {
   event.preventDefault();
@@ -75,7 +78,7 @@ locationWeather.addEventListener("click", currentWeather);
 function showWeather(response) {
   console.log(response);
   console.log(response.data.main.temp);
-  let temperature = Math.round(response.data.main.temp);
+  celsiusTemperature = Math.round(response.data.main.temp);
   let feels = Math.round(response.data.main.feels_like);
   let place = response.data.name;
   let humidity = response.data.main.humidity;
@@ -90,7 +93,7 @@ function showWeather(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   let degrees = document.querySelector("#degrees");
-  degrees.innerHTML = `${temperature}`;
+  degrees.innerHTML = `${celsiusTemperature}`;
   let h4 = document.querySelector("h4");
   h4.innerHTML = `Feels like ${feels}°C, ${description}`;
   let h5 = document.querySelector("h5");
