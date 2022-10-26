@@ -85,7 +85,6 @@ function showWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let description = response.data.weather[0].description;
   let icon = document.querySelector("#icon");
-  //let icon = response.data.weather[0].icon;
   let h1 = document.querySelector("h1");
   h1.innerHTML = `${place}`;
   icon.setAttribute(
