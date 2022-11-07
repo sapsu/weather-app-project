@@ -75,13 +75,18 @@ function currentWeather(event) {
 let locationWeather = document.querySelector("#location");
 locationWeather.addEventListener("click", currentWeather);
 
+function getForecast(coordinates) {
+  let apiKey = "e947cb2640f1db92e6a19005bc43b435";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
 function showWeather(response) {
   //console.log(response);
   //console.log(response.data.main.temp);
   celsiusTemperature = Math.round(response.data.main.temp);
   let feels = Math.round(response.data.main.feels_like);
   let feelsFahrenheit = Math.round((feels * 9) / 5 + 32);
-  console.log(feelsFahrenheit);
   let place = response.data.name;
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
@@ -99,10 +104,14 @@ function showWeather(response) {
   h4.innerHTML = `Feels like ${feels}°C (${feelsFahrenheit}°F), ${description}`;
   let h5 = document.querySelector("h5");
   h5.innerHTML = `Humidity: ${humidity}% Wind speed: ${wind} m/s`;
+
+  getForecast(response.data.coord);
 }
+
 displayForecast();
 
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
