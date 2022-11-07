@@ -129,10 +129,11 @@ function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
 
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
   <div class="row">
                 <div class="col-sm-6 weather-forecast-date">${formatDay(
                   forecastDay.dt
@@ -147,6 +148,7 @@ function displayForecast(response) {
                 }@2x.png" alt="" id="forecasticon"/></div>
               </div>
               `;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;
