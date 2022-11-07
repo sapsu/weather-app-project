@@ -100,3 +100,25 @@ function showWeather(response) {
   let h5 = document.querySelector("h5");
   h5.innerHTML = `Humidity: ${humidity}% Wind speed: ${wind} m/s`;
 }
+displayForecast();
+
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+  <div class="row">
+                <div class="col-sm-6 weather-forecast-date">${day}</div>
+                <div class="col-sm-4">
+                  <span class="weather-forecast-temperature">25</span>°C
+                </div>
+                <div class="col-sm-2"><i class="fa-solid fa-sun"></i></div>
+              </div>
+              `;
+  });
+
+  forecastElement.innerHTML = forecastHTML;
+}
