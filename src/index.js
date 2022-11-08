@@ -82,8 +82,6 @@ function getForecast(coordinates) {
 }
 
 function showWeather(response) {
-  //console.log(response);
-  //console.log(response.data.main.temp);
   celsiusTemperature = Math.round(response.data.main.temp);
   let feels = Math.round(response.data.main.feels_like);
   let feelsFahrenheit = Math.round((feels * 9) / 5 + 32);
