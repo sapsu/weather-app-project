@@ -28,7 +28,8 @@ img {
 }
 h1 {
   color: #475053;
-  font-size: 20px;
+  font-size: 13px;
+  font-weight: bold;
   margin-top: 20px;
   text-align: center;
 }
@@ -58,8 +59,7 @@ h5 {
 }
 .col-sm-6,
 .col-sm-4,
-.col-sm-3,
-.col-sm-2 {
+.col-sm-3 {
   font-size: 13px;
   color: #475053;
 }
@@ -76,7 +76,6 @@ button {
   background-color: white;
   border-radius: 5px;
   border-style: none;
-
   padding: 8px 10px;
   transition: ease-in-out 30ms all;
 }

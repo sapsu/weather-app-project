@@ -136,7 +136,7 @@ function displayForecast(response) {
                 <div class="col-sm-6 weather-forecast-date">${formatDay(
                   forecastDay.dt
                 )}</div>
-                <div class="col-sm-2">
+                <div class="col-sm-3">
                   <span class="weather-forecast-temperature">${Math.round(
                     forecastDay.temp.day
                   )}</span>°C
