@@ -6,3 +6,5 @@ The weather app wireframe was done using https://www.invisionapp.com/. The app h
 Images used on the app have been captured by myself in my lovely place of residence; Marbella, Spain.
 
 The app has been done as a project for SheCodes Plus web development workshop https://www.shecodes.io/. It is hosted on Netlify https://www.netlify.com/.
+
+https://cosmic-brioche-c85fbd.netlify.app/
