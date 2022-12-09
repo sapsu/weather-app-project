@@ -62,8 +62,7 @@ h5 {
   transition: ease-in-out 30ms all;
 }
 .col-6 {
-  border: 1px solid #f0fbff;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 .col-sm-6,
 .col-sm-4,
